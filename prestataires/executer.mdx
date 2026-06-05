@@ -1,6 +1,6 @@
 ---
 title: "Exécuter"
-description: "Suivre une intervention acceptée, intervenir sur place et marquer les travaux comme terminés."
+description: "Suivre une intervention acceptée, proposer un créneau et avancer jusqu’à la fin des travaux."
 ---
 
 import EnCours from "../snippets/EnCours.mdx"
@@ -11,7 +11,7 @@ import EnCours from "../snippets/EnCours.mdx"
 
 Cette page explique comment suivre une intervention acceptée en tant que prestataire.
 
-Elle couvre les étapes principales : consulter l’intervention, gérer le créneau, intervenir sur place, documenter les travaux et indiquer que l’intervention est terminée.
+Elle couvre les étapes principales : consulter l’intervention, proposer un créneau, préparer le déplacement, suivre l’exécution et terminer les travaux lorsque l’action est disponible.
 
 ## Quand utiliser cette page ?
 
@@ -20,11 +20,12 @@ Utilisez cette page lorsqu’une intervention vous est confiée après validatio
 Elle est utile pour :
 
 - retrouver une intervention acceptée ;
-- consulter le créneau prévu ;
-- proposer ou confirmer un créneau si nécessaire ;
+- consulter les informations de l’intervention ;
+- télécharger le mandat si nécessaire ;
+- proposer un créneau ;
 - suivre les consignes avant le déplacement ;
 - documenter les travaux ;
-- marquer l’intervention comme terminée.
+- terminer l’intervention lorsque l’interface le permet.
 
 ## Avant de commencer
 
@@ -33,17 +34,17 @@ Avant d’aller sur place, vérifiez :
 - l’adresse et les informations d’accès ;
 - le problème signalé ;
 - le type d’intervention attendu ;
-- le créneau prévu ou à proposer ;
-- les notes du gestionnaire ;
+- le niveau d’urgence ;
+- le devis validé ;
 - les documents utiles, comme le mandat, si disponibles.
 
-Préparez aussi les photos ou notes que vous devrez ajouter après l’intervention, si l’interface le permet.
+Préparez aussi les notes que vous devrez ajouter après l’intervention si l’interface le permet.
 
 ## Étapes
 
 <Steps>
   <Step title="Ouvrir l’intervention acceptée">
-    Depuis votre espace prestataire, ouvrez la liste des interventions à réaliser.
+    Depuis votre espace prestataire, ouvrez la liste des interventions.
 
     Sélectionnez l’intervention concernée pour afficher son détail.
   </Step>
@@ -51,57 +52,50 @@ Préparez aussi les photos ou notes que vous devrez ajouter après l’intervent
   <Step title="Vérifier les informations de l’intervention">
     Relisez le problème signalé, le lieu, la priorité et les informations utiles.
 
-    Si un mandat ou un document est disponible, téléchargez-le avant le déplacement.
+    Si un mandat est disponible, téléchargez-le avant le déplacement.
   </Step>
-</Steps>
 
-{/* TODO capture: /images/prestataire-execution-intervention.png — écran d’exécution ou suivi de l’intervention côté prestataire */}
-
-<Steps>
   <Step title="Gérer le créneau">
-    Vérifiez si un créneau est déjà proposé ou confirmé.
+    Dans l’écran d’exécution, sélectionnez un jour dans le calendrier pour proposer un créneau.
 
-    Si l’interface le permet, proposez un créneau au locataire ou confirmez le créneau proposé par l’autre partie.
+    Vérifiez la date et l’heure avant d’envoyer votre proposition.
 
-    Ne confirmez un créneau que si vous pouvez l’honorer.
+    <img
+      src="/images/prestataire-execution-intervention.png"
+      alt="Intervention en phase d’exécution avec le calendrier de proposition de créneau"
+    />
   </Step>
 
-  <Step title="Démarrer l’intervention">
-    Le jour prévu, suivez les consignes affichées dans l’intervention.
+  <Step title="Préparer l’intervention">
+    Avant le rendez-vous, vérifiez que vous disposez des informations nécessaires pour intervenir.
 
-    Si l’action est disponible, utilisez le bouton de démarrage au début de la visite ou des travaux.
+    En cas d’information manquante, contactez le gestionnaire par le canal prévu dans l’application.
   </Step>
 
-  <Step title="Documenter les travaux">
-    Ajoutez les informations utiles pendant ou après l’intervention, si l’interface le propose.
+  <Step title="Réaliser les travaux">
+    Le jour prévu, réalisez l’intervention selon les informations disponibles.
 
-    Indiquez ce qui a été constaté, ce qui a été fait, et les suites éventuelles.
-
-    Ajoutez des photos si elles aident à comprendre le résultat.
+    Notez les éléments importants : diagnostic, action réalisée, pièce remplacée, ou suite à prévoir.
   </Step>
 
   <Step title="Terminer l’intervention">
-    Lorsque les travaux sont terminés, utilisez l’action prévue pour les marquer comme terminés.
+    Lorsque les travaux sont terminés, utilisez l’action de fin si elle est disponible dans l’interface.
 
-    Si une nouvelle visite est nécessaire, suivez plutôt l’action indiquée par l’interface pour terminer la session ou proposer un nouveau créneau.
+    Si une nouvelle visite est nécessaire, suivez l’action proposée par l’application plutôt que de marquer l’intervention comme terminée.
   </Step>
 </Steps>
 
-{/* TODO capture: /images/prestataire-cloture-intervention.png — action de clôture ou intervention marquée comme terminée */}
-
 ## Résultat attendu
 
-L’intervention passe à l’étape suivante.
+L’intervention avance dans la phase d’exécution.
 
-Après votre action de fin, le locataire ou le gestionnaire peut être amené à confirmer la clôture. Une fois validée, l’intervention est considérée comme terminée.
+Le gestionnaire et le locataire peuvent suivre l’avancement. Une fois les travaux finalisés et validés, l’intervention peut être clôturée.
 
 ## Points d’attention
 
 - Vérifiez toujours le créneau avant de vous déplacer.
-- Ne démarrez l’intervention que lorsque vous êtes prêt à intervenir.
+- Ne proposez un créneau que si vous pouvez l’honorer.
+- Téléchargez le mandat si vous en avez besoin sur place.
 - Documentez les travaux de façon courte et factuelle.
-- Ajoutez des photos si l’interface le permet et si elles sont utiles.
-- Si les travaux ne peuvent pas être terminés en une fois, utilisez l’action adaptée plutôt que de marquer l’intervention comme terminée.
+- Si les travaux ne peuvent pas être terminés en une fois, indiquez clairement la suite à prévoir.
 - Certaines actions peuvent apparaître ou disparaître selon le statut de l’intervention.
-
-{/* TODO interne: vérifier dans l'application la disponibilité exacte côté prestataire des notes, photos, démarrage, fin de session et clôture des travaux. */}

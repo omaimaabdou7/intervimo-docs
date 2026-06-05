@@ -21,7 +21,7 @@ Elle est utile pour :
 
 - consulter les informations de l’intervention ;
 - vérifier le problème signalé ;
-- accepter ou refuser la demande si l’action est disponible ;
+- accepter ou refuser la demande ;
 - préparer un devis ;
 - envoyer le devis au gestionnaire.
 
@@ -33,7 +33,7 @@ Avant de répondre, vérifiez les informations disponibles :
 - le lieu de l’intervention ;
 - le niveau d’urgence ;
 - les informations transmises par le gestionnaire ;
-- les notes ou photos disponibles, si elles sont visibles.
+- les notes disponibles dans la demande.
 
 Si une information importante manque, gardez-la en tête avant de vous engager ou indiquez-le dans vos notes si l’interface le permet.
 
@@ -41,9 +41,9 @@ Si une information importante manque, gardez-la en tête avant de vous engager o
 
 <Steps>
   <Step title="Ouvrir les mandats reçus">
-    Depuis votre espace prestataire, ouvrez la partie dédiée aux demandes ou aux mandats.
+    Depuis votre espace prestataire, ouvrez la partie dédiée aux interventions ou aux demandes reçues.
 
-    Repérez la demande à traiter. Elle peut être affichée avec son statut, son secteur ou sa priorité.
+    Repérez la demande à traiter. Elle peut être affichée avec son statut, son secteur et son niveau d’urgence.
   </Step>
 
   <Step title="Consulter le détail du mandat">
@@ -64,29 +64,28 @@ Si une information importante manque, gardez-la en tête avant de vous engager o
   </Step>
 
   <Step title="Accepter ou refuser la demande">
-    Si l’interface le permet, répondez à la demande.
+    Acceptez la demande si vous souhaitez poursuivre.
 
-    Acceptez si vous souhaitez poursuivre. Refusez si vous ne pouvez pas intervenir.
-
-    En cas de refus, ajoutez une note courte si un champ est prévu.
+    Refusez-la si vous ne pouvez pas intervenir ou si la demande ne correspond pas à votre activité.
   </Step>
 
   <Step title="Préparer le devis">
     Préparez votre chiffrage avec les informations connues.
 
-    Indiquez le montant si vous pouvez déjà le confirmer. Ajoutez une note pour expliquer ce qui est inclus ou ce qui reste à vérifier.
+    Indiquez le montant TTC si vous pouvez déjà le confirmer. Ajoutez une note courte pour expliquer ce qui est inclus ou ce qui reste à vérifier.
   </Step>
 
   <Step title="Soumettre le devis">
-    Ouvrez l’action de soumission du devis.
+    Ouvrez l’action de finalisation du devis.
 
-    Renseignez les informations demandées. Joignez le document du devis si l’interface le propose.
+    Renseignez les informations demandées, puis envoyez le devis au gestionnaire.
 
-    Relisez le montant et les notes avant d’envoyer.
+    <img
+      src="/images/prestataire-soumission-devis.png"
+      alt="Devis finalisé et en attente de validation par le gestionnaire"
+    />
   </Step>
 </Steps>
-
-{/* TODO capture: /images/prestataire-soumission-devis.png — écran de soumission d’un devis côté prestataire, à ajouter après activation de l’abonnement prestataire */}
 
 ## Résultat attendu
 
@@ -101,5 +100,3 @@ Si vous avez envoyé un devis, le gestionnaire peut l’examiner. Il peut ensuit
 - Ajoutez une note si le montant dépend d’une visite ou d’un diagnostic.
 - Ne soumettez pas un devis tant que les informations importantes ne sont pas vérifiées.
 - Certaines actions peuvent dépendre du statut actuel de la demande.
-
-{/* TODO interne: vérifier dans l'application les libellés exacts côté prestataire pour accepter, refuser et soumettre le devis. */}
