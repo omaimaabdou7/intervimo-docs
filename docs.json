@@ -4,13 +4,8 @@
   "name": "Intervimo",
   "colors": {
     "primary": "#FD593E",
-<<<<<<< HEAD
-    "light": "#07C983",
-    "dark": "#15803D"
-=======
     "light": "#FF8A70",
     "dark": "#E64A30"
->>>>>>> ece2d5c8c984774272b7232ff39257b7f0ed2f84
   },
   "favicon": "/favicon.png",
   "navigation": {
@@ -48,14 +43,6 @@
         ]
       }
     ]
-<<<<<<< HEAD
-  }
-},
-  "logo": {
-    "light": "/logo/intervimo_logo.png",
-    "dark": "/logo/dark.svg"
-=======
->>>>>>> ece2d5c8c984774272b7232ff39257b7f0ed2f84
   },
   "logo": {
     "light": "/logo/intervimo_logo.png",
