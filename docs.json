@@ -1,80 +1,65 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Intervimo Docs",
+  "name": "Intervimo",
   "colors": {
     "primary": "#FD593E",
+<<<<<<< HEAD
     "light": "#07C983",
     "dark": "#15803D"
+=======
+    "light": "#FF8A70",
+    "dark": "#E64A30"
+>>>>>>> ece2d5c8c984774272b7232ff39257b7f0ed2f84
   },
   "favicon": "/favicon.png",
   "navigation": {
-  "pages": [
-    {
-      "group": "Concepts",
-      "pages": [
-        "concepts/cycle-de-vie",
-        "concepts/roles-acteurs",
-        "concepts/glossaire",
-        "concepts/prise-en-main"
-      ]
-    },
-    {
-      "group": "Locataires",
-      "pages": [
-        "locataires/signaler",
-        "locataires/suivre"
-      ]
-    },
-    {
-      "group": "Gestionnaires",
-      "pages": [
-        "gestionnaires/qualifier",
-        "gestionnaires/matchmaking",
-        "gestionnaires/devis",
-        "gestionnaires/planification"
-      ]
-    },
-    {
-      "group": "Prestataires",
-      "pages": [
-        "prestataires/recevoir-chiffrer",
-        "prestataires/executer"
-      ]
-    }
-  ],
-
-  "global": {
-    "anchors": [
+    "pages": [
       {
-        "anchor": "Documentation",
-        "href": "https://mintlify.com/docs",
-        "icon": "book-open-cover"
+        "group": "Concepts",
+        "pages": [
+          "concepts/cycle-de-vie",
+          "concepts/roles-acteurs",
+          "concepts/glossaire",
+          "concepts/prise-en-main"
+        ]
       },
       {
-        "anchor": "Blog",
-        "href": "https://mintlify.com/blog",
-        "icon": "newspaper"
+        "group": "Locataires",
+        "pages": [
+          "locataires/signaler",
+          "locataires/suivre"
+        ]
+      },
+      {
+        "group": "Gestionnaires",
+        "pages": [
+          "gestionnaires/qualifier",
+          "gestionnaires/matchmaking",
+          "gestionnaires/devis",
+          "gestionnaires/planification"
+        ]
+      },
+      {
+        "group": "Prestataires",
+        "pages": [
+          "prestataires/recevoir-chiffrer",
+          "prestataires/executer"
+        ]
       }
     ]
+<<<<<<< HEAD
   }
 },
   "logo": {
     "light": "/logo/intervimo_logo.png",
     "dark": "/logo/dark.svg"
+=======
+>>>>>>> ece2d5c8c984774272b7232ff39257b7f0ed2f84
   },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
-    }
+  "logo": {
+    "light": "/logo/intervimo_logo.png",
+    "dark": "/logo/intervimo_logo.png"
   },
   "contextual": {
     "options": [
@@ -87,12 +72,5 @@
       "cursor",
       "vscode"
     ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
   }
 }
