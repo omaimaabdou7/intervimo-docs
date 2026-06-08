@@ -1,8 +1,102 @@
 ---
 title: Matchmaking
-description: Documentation en cours de rédaction
+description: "Sélectionner un prestataire adapté à l'intervention, lui envoyer un mandat et suivre sa réponse."
 ---
 
 import EnCours from "../snippets/EnCours.mdx"
 
 <EnCours />
+
+## Objectif
+ 
+Cette page explique comment un gestionnaire trouve un prestataire pour une intervention, lui envoie un mandat (ordre de service) et gère les réponses — acceptation, refus ou absence de réponse. C'est la phase qui suit la qualification et qui permet d'assigner officiellement un prestataire à l'intervention.
+ 
+## Quand utiliser cette page ?
+ 
+Utilisez cette page lorsqu'une intervention est dans la phase **MATCHMAKING**. Cela signifie que la qualification a été validée et qu'il faut maintenant trouver la bonne entreprise pour réaliser les travaux.
+ 
+## Avant de commencer
+ 
+- L'intervention doit être en phase **MATCHMAKING** (statut DISCOVERY).
+- Vous devez connaître le **type de service** requis (plomberie, électricité, serrurerie, etc.) — il conditionne la liste des prestataires affichés.
+- Identifiez si vous travaillez en mode **EXPRESS** (sans devis) ou si un devis sera requis en fonction du montant estimé.
+## Étapes
+ 
+<Steps>
+  <Step title="Accéder à la section Matchmaking de l'intervention">
+    Ouvrez la page de détail de l'intervention. Naviguez jusqu'à la section **Matchmaking**.
+    Vous voyez l'état actuel : statut **DISCOVERY**, indiquant qu'aucun prestataire n'a encore été sélectionné.
+ 
+    ![Liste des interventions avec filtres](/images/4.png)
+  </Step>
+  <Step title="Sélectionner un prestataire">
+    Cliquez sur **Select Provider**. Une liste de prestataires s'affiche, filtrée automatiquement selon le **type de service** requis par l'intervention.
+    Dans cette liste :
+    - Les **prestataires partenaires** de l'agence apparaissent en priorité, identifiables par un badge **Partner**.
+    - Les prestataires non partenaires sont affichés en dessous.
+ 
+    Sélectionnez le prestataire souhaité dans la liste déroulante, puis confirmez votre choix. La section affiche désormais le **prestataire sélectionné** et le bouton **Send Service Order** devient actif.
+ 
+    > Si aucun prestataire n'est disponible pour le service requis, le message « No providers available for this service type » s'affiche. Vous pouvez alors consulter tous vos partenariats ou demander l'ajout d'un nouveau prestataire.
+ 
+ 
+    > **À noter :** Vous pouvez changer de prestataire tant que le mandat n'a pas été envoyé.
+  </Step>
+  <Step title="Configurer et envoyer le mandat">
+    Cliquez sur **Send Service Order**. Un récapitulatif du mandat s'affiche avant envoi, incluant :
+    - Le prestataire sélectionné
+    - Le titre de l'intervention et le type de service
+    - Le niveau d'urgence et l'adresse du bien
+    - Le **type de mandat** (sélectionnable via une liste déroulante)
+    - Le **délai de réponse** accordé au prestataire (par défaut : 48 heures)
+    Sélectionnez le type de mandat. Pour une intervention sans devis, choisissez **EXPRESS** — la mention « Mandat EXPRESS – sans devis » apparaît explicitement dans le récapitulatif.
+ 
+    Ajustez le délai de réponse si nécessaire (en heures ou en jours), puis cliquez sur **Confirm Send**.
+ 
+    Le statut du matchmaking passe à **CONTRACTING**. Le prestataire reçoit une notification et dispose du délai imparti pour répondre.
+ 
+  </Step>
+  <Step title="Suivre la réponse du prestataire">
+    Dans la section Matchmaking, vous voyez désormais :
+    - Le **prestataire contacté** et la date d'envoi du mandat
+    - Un **compte à rebours** indiquant le délai restant pour la réponse
+    - Le statut : **EXPRESS Mandate Pending**
+    Trois issues sont possibles :
+ 
+    **Le prestataire accepte** → le statut passe à **ASSIGNED**, l'intervention entre en phase EXECUTION et la planification du rendez-vous peut commencer. Vous recevez une notification.
+ 
+    **Le prestataire refuse** → le statut repasse à **DISCOVERY**. Un motif de refus est enregistré (et visible dans l'historique). Retournez à l'étape 2 pour sélectionner un autre prestataire.
+ 
+    **Pas de réponse sous 48 h** → le mandat expire automatiquement. L'intervention repasse à l'état de sélection. Le prestataire est exclu des prochaines sélections pour cette intervention.
+ 
+  </Step>
+  <Step title="Gérer les refus et sélectionner un prestataire de remplacement">
+    Si un prestataire a refusé ou si le mandat a expiré, la section Matchmaking affiche l'**historique des tentatives** :
+    | Prestataire | Statut | Motif | Date |
+    |---|---|---|---|
+    | Plomberie Dupont | Refusé | Complet | 15/01/2026 |
+    | Plomberie Martin | Expiré | Pas de réponse (48h) | 16/01/2026 |
+ 
+    Cliquez sur **Select Another Provider**. Les prestataires ayant déjà refusé ou expiré sont automatiquement exclus de la liste. Si tous les partenaires ont refusé, les prestataires du marketplace s'affichent avec un avertissement « Selecting non-partner provider ».
+ 
+    Recommencez les étapes 2 et 3 pour envoyer un nouveau mandat.
+  </Step>
+</Steps>
+## Résultat attendu
+ 
+À la fin du matchmaking, l'intervention est assignée à un prestataire (statut **ASSIGNED**) et entre en phase **EXECUTION**. La planification du rendez-vous peut commencer. L'historique conserve la trace de toutes les tentatives pour chaque intervention.
+ 
+## Points d'attention
+ 
+<Info>
+La sélection d'un prestataire n'équivaut pas encore à une assignation. L'assignation officielle n'est effective qu'après l'envoi et l'acceptation du mandat par le prestataire.
+</Info>
+<Warning>
+Si le délai de 48 h approche et que vous n'avez pas encore reçu de réponse, l'interface affiche une alerte « Provider response deadline in X heures ». Vous pouvez annuler le mandat manuellement via **Cancel Mandate & Select Another Provider** pour ne pas attendre l'expiration automatique.
+</Warning>
+<Info>
+Dans le cas d'un appel d'offres, vous devez sélectionner 3 entreprises. Ce cas est distinct du flux EXPRESS décrit ici — référez-vous à la documentation spécifique aux mandats AVEC devis (US 34-2 et 34-3).
+</Info>
+<Warning>
+Un prestataire ayant dépassé le délai de réponse ou refusé un mandat est automatiquement exclu des prochaines sélections pour cette intervention. Cette exclusion est automatique et ne peut pas être contournée dans le MVP.
+</Warning>

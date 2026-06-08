@@ -1,8 +1,85 @@
 ---
 title: Roles-acteurs
-description: Documentation en cours de rédaction
+description: "Les trois profils d'Intervimo : qui ils sont, ce qu'ils peuvent faire, et comment ils interagissent."
 ---
 
 import EnCours from "../snippets/EnCours.mdx"
 
 <EnCours />
+
+## Objectif
+ 
+Cette page présente les acteurs de la plateforme Intervimo, leurs responsabilités respectives et les niveaux de permissions au sein de chaque profil. Elle vous aide à vous situer avant de lire votre guide dédié.
+ 
+## Les trois acteurs
+ 
+Intervimo est organisé autour de trois profils distincts qui interviennent à des étapes différentes du [cycle de vie d'une intervention](/concepts/cycle-de-vie).
+ 
+---
+ 
+### Le résident (locataire ou propriétaire)
+ 
+Le résident est l'occupant d'un bien géré via Intervimo. Il est le point de départ du cycle : c'est lui qui constate un problème et soumet un **signalement**.
+ 
+**Ce qu'il peut faire :**
+- Créer un signalement depuis son espace
+- Répondre aux demandes de précisions du gestionnaire
+- Proposer des créneaux de rendez-vous pour l'intervention
+- Suivre l'avancement de ses interventions
+**Ce qu'il ne fait pas :** il n'approuve pas les devis, n'assigne pas de prestataire et n'archive pas les interventions — ces actions appartiennent au gestionnaire.
+ 
+**Comment il accède à la plateforme :** via un **lien magique** envoyé par le gestionnaire. Il n'a pas de compte à créer. Voir [Prise en main](/concepts/acces).
+ 
+---
+ 
+### Le gestionnaire (agence)
+ 
+Le gestionnaire est l'acteur central d'Intervimo. Il pilote l'ensemble du cycle de vie depuis son cockpit : qualification des signalements, sélection des prestataires, validation des devis, supervision de l'exécution et archivage.
+ 
+Un gestionnaire appartient à une **agence** et peut avoir l'un des niveaux suivants :
+ 
+| Niveau | Description |
+|---|---|
+| **Owner** | Administrateur principal de l'agence. Accès complet, y compris la gestion des comptes et des paramètres. |
+| **Admin** | Peut gérer les interventions, les prestataires et les résidents. Ne peut pas modifier les paramètres de l'agence. |
+| **Assistant** | Peut consulter et traiter les interventions. Droits limités sur la gestion des comptes. |
+ 
+**Comment il accède à la plateforme :** via inscription de l'agence sur Intervimo, puis connexion. Voir [Prise en main / accès](/concepts/acces).
+ 
+→ Consultez le **Guide gestionnaire** pour le détail de chaque action.
+ 
+---
+ 
+### Le prestataire (entreprise)
+ 
+Le prestataire est l'entreprise chargée de réaliser les travaux. Il reçoit des **mandats** de la part des agences partenaires, planifie les interventions et en assure l'exécution sur site.
+ 
+Un prestataire appartient à une **entreprise** et peut avoir l'un des niveaux suivants :
+ 
+| Niveau | Description |
+|---|---|
+| **Owner** | Administrateur de l'entreprise prestataire. Accès complet. |
+| **Admin** | Peut gérer les mandats, les agents et les interventions assignées. |
+| **Agent** | Exécute les interventions sur le terrain. Accès limité à ses propres missions. |
+ 
+**Comment il accède à la plateforme :** via une invitation de l'agence partenaire, puis inscription et connexion. Voir [Prise en main / accès](/concepts/acces).
+ 
+→ Consultez le **Guide prestataire** pour le détail de chaque action.
+ 
+---
+ 
+## Qui fait quoi — synthèse
+ 
+| Action | Résident | Gestionnaire | Prestataire |
+|---|:---:|:---:|:---:|
+| Créer un signalement | ✓ | ✓ | — |
+| Qualifier / rejeter | — | ✓ | — |
+| Sélectionner un prestataire | — | ✓ | — |
+| Accepter / refuser un mandat | — | — | ✓ |
+| Soumettre un devis | — | — | ✓ |
+| Approuver / refuser un devis | — | ✓ | — |
+| Proposer des créneaux | ✓ | ✓ | — |
+| Confirmer un créneau | — | — | ✓ |
+| Exécuter les travaux | — | — | ✓ |
+| Approuver la clôture | — | ✓ | — |
+ 

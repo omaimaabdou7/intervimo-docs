@@ -1,8 +1,131 @@
 ---
 title: Glossaire
-description: Documentation en cours de rédaction
+description: "Référence officielle du vocabulaire Intervimo. Tous les termes utilisés dans la documentation sont définis ici."
 ---
 
 import EnCours from "../snippets/EnCours.mdx"
 
 <EnCours />
+
+## Objectif
+ 
+Ce glossaire est la référence de vocabulaire pour l'ensemble de la documentation Intervimo. En cas de doute sur la signification d'un terme, consultez cette page. Les autres pages de la doc utilisent ces termes sans les redéfinir.
+ 
+---
+ 
+## Termes
+ 
+### Intervention
+ 
+L'unité centrale d'Intervimo. Une intervention représente une demande de travaux ou de maintenance sur un bien immobilier, depuis sa déclaration jusqu'à son archivage. Elle est identifiée par une référence unique au format `INT-{numéro}` et traverse plusieurs **phases** au cours de son cycle de vie.
+ 
+---
+ 
+### Signalement
+ 
+Acte par lequel un résident ou un gestionnaire déclare un problème sur un bien. Le signalement est le point de départ de toute intervention. Il contient a minima un titre, une description, un secteur et un niveau d'urgence.
+ 
+---
+ 
+### Qualification
+ 
+Phase durant laquelle le gestionnaire examine un signalement et décide de le valider ou de le rejeter. Il peut demander des précisions au résident avant de statuer. Une intervention qualifiée est prête à entrer en phase de matchmaking.
+ 
+---
+ 
+### Matchmaking
+ 
+Phase de mise en relation entre l'agence et un prestataire. Le gestionnaire identifie une ou plusieurs entreprises adaptées au type d'intervention et leur envoie un **mandat**. Le matchmaking se termine dès qu'un prestataire accepte le mandat.
+ 
+---
+ 
+### Mandat
+ 
+Document envoyé par le gestionnaire à un prestataire pour lui proposer de prendre en charge une intervention. Le prestataire dispose de 48 heures pour l'accepter ou le refuser. L'acceptation d'un mandat déclenche la phase d'exécution.
+ 
+---
+ 
+### Devis
+ 
+Proposition chiffrée soumise par le prestataire avant de démarrer les travaux, lorsque cela est jugé nécessaire. Le gestionnaire peut l'approuver, le refuser ou demander une révision. Cette étape est facultative : si aucun devis n'est requis, l'exécution démarre directement après le matchmaking.
+ 
+---
+ 
+### Exécution
+ 
+Phase opérationnelle de l'intervention. Elle couvre la planification du rendez-vous, le démarrage des travaux sur site, leur suivi et leur clôture. L'exécution commence dès qu'un mandat est accepté et se termine lorsque le gestionnaire approuve la clôture.
+ 
+---
+ 
+### Créneau de rendez-vous
+ 
+Proposition horaire soumise par le résident ou le gestionnaire pour organiser la visite du prestataire. Un créneau peut avoir les statuts suivants : `PENDING` (en attente), `CONFIRMED` (retenu), `REJECTED` (refusé), `EXPIRED` (délai dépassé).
+ 
+---
+ 
+### Archive
+ 
+État final d'une intervention dont les travaux ont été validés et clôturés. Une intervention archivée est retirée de la liste active mais reste consultable dans l'historique. Elle ne peut plus être modifiée.
+ 
+---
+ 
+### Lien magique
+ 
+Lien d'accès unique et sécurisé envoyé par le gestionnaire à un résident pour lui permettre d'accéder à la plateforme sans créer de compte. Le lien contient un token JWT à durée limitée lié à un bien spécifique. Il est invalidé après utilisation.
+ 
+---
+ 
+### Résident
+ 
+Locataire ou propriétaire d'un bien géré via Intervimo. Il est l'auteur du signalement initial et participe à la planification des rendez-vous. Il accède à la plateforme via un lien magique.
+ 
+---
+ 
+### Gestionnaire
+ 
+Profil utilisateur appartenant à une agence immobilière. Il pilote l'ensemble du cycle de vie des interventions : qualification, matchmaking, validation des devis, supervision de l'exécution et archivage. Il peut avoir le niveau **owner**, **admin** ou **assistant** au sein de son agence.
+ 
+---
+ 
+### Prestataire
+ 
+Entreprise chargée de réaliser les travaux. Elle reçoit des mandats de la part des agences partenaires et exécute les interventions sur site. Un prestataire peut avoir plusieurs **agents** qui interviennent sur le terrain. Les niveaux disponibles sont **owner**, **admin** et **agent**.
+ 
+---
+ 
+### Agent prestataire
+ 
+Membre d'une entreprise prestataire chargé d'intervenir physiquement sur site. Il opère sous la responsabilité du manager ou admin de son entreprise.
+ 
+---
+ 
+### Agence
+ 
+Structure organisationnelle à laquelle appartient un gestionnaire. Une agence gère un portefeuille de biens immobiliers et de résidents, et noue des partenariats avec des entreprises prestataires.
+ 
+---
+ 
+### Partenariat
+ 
+Relation formelle établie entre une agence et une entreprise prestataire sur Intervimo, permettant à l'agence d'envoyer des mandats à ce prestataire.
+ 
+---
+ 
+### Phase
+ 
+Étape principale dans le cycle de vie d'une intervention. Les phases sont : `CREATED`, `QUALIFICATION`, `MATCHMAKING`, `EXECUTION`, `ARCHIVED`. Voir [Cycle de vie d'une intervention](/concepts/cycle-de-vie).
+ 
+---
+ 
+### Urgence
+ 
+Niveau de priorité associé à une intervention. Les valeurs possibles sont `LOW` (faible), `MEDIUM` (normale), `HIGH` (élevée) et `URGENT` (urgente). Ce niveau influence la priorité de traitement par le gestionnaire et le prestataire.
+ 
+---
+ 
+### Secteur
+ 
+Type de corps de métier concerné par une intervention. Exemples : plomberie (`PLUMBING`), électricité (`ELECTRICAL`), serrurerie (`LOCKSMITH`), chauffage/climatisation (`HVAC`), peinture (`PAINTING`), etc. Le secteur est utilisé lors du matchmaking pour identifier les prestataires compétents.
+ 
+---
+ 

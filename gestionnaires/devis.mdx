@@ -1,8 +1,102 @@
 ---
 title: Devis
-description: Documentation en cours de rédaction
+description: "Consulter les devis soumis par les prestataires, demander des révisions et prendre une décision d'approbation ou de refus."
 ---
 
 import EnCours from "../snippets/EnCours.mdx"
 
 <EnCours />
+
+## Objectif
+ 
+Cette page explique comment un gestionnaire traite les devis soumis par les prestataires. Lorsqu'une intervention dépasse le seuil budgétaire défini (ou lorsque le type de mandat l'exige), le prestataire doit soumettre un devis avant de commencer les travaux. Vous recevez ce devis, vous l'analysez, et vous pouvez l'approuver, le refuser ou demander une révision.
+ 
+## Quand utiliser cette page ?
+ 
+Utilisez cette page lorsqu'un prestataire a soumis un devis pour une intervention (`quote_required = true`) et que vous recevez une notification « New quote received ». Le devis est consultable depuis la page de détail de l'intervention, dans la section **Devis / Propositions**.
+ 
+## Avant de commencer
+ 
+- L'intervention doit être assignée à un prestataire (phase EXECUTION ou MATCHMAKING selon le flux).
+- Le devis doit avoir été soumis par le prestataire avec le statut **ASSESSMENT**.
+- Vous devez connaître le seuil budgétaire applicable à ce bien (seuil de l'intervention, de la propriété, de l'agence ou seuil système de 500 € par défaut).
+## Étapes
+ 
+<Steps>
+  <Step title="Accéder au devis depuis la page de détail">
+    Ouvrez la page de détail de l'intervention concernée. Naviguez jusqu'à la section **Devis / Propositions**.
+    Vous voyez le devis soumis par le prestataire avec les informations suivantes :
+    - **Montant total** (HT, TVA, TTC)
+    - **Description détaillée** : main-d'œuvre, matériaux, conditions
+    - **Pièce jointe PDF** si le prestataire en a fourni une
+    - **Statut** : `ASSESSMENT` (en attente de votre décision)
+ 
+    ![Liste des interventions avec filtres](/images/5.png)
+  </Step>
+  <Step title="Analyser le devis">
+    Vérifiez les points suivants avant de décider :
+    - Le montant est-il cohérent avec le type de travaux et les standards du marché ?
+    - La description est-elle suffisamment détaillée (matériaux précisés, temps de main-d'œuvre) ?
+    - Le délai d'intervention proposé par le prestataire est-il compatible avec l'urgence ?
+    - Le montant dépasse-t-il le seuil budgétaire autorisé pour ce bien ou cette agence ?
+ 
+    Si un PDF est joint, consultez-le pour obtenir le détail complet.
+  </Step>
+  <Step title="Approuver le devis">
+    Si le devis vous convient, cliquez sur **Approve Quote**, puis confirmez l'action.
+    Le système enregistre :
+    - `PROPOSAL.status` → **VALIDATED**
+    - `validated_at` → horodatage de la validation
+    - `assessed_by_manager_id` → votre identifiant
+ 
+    Le prestataire reçoit la notification « Quote approved for intervention [REF] » et voit apparaître « Quote Approved – Begin Work » dans son interface. L'intervention peut désormais passer à l'état **IN_PROGRESS** après confirmation du rendez-vous.
+ 
+    > **À noter :** Une fois approuvé, le montant du devis est **verrouillé**. Toute modification ultérieure nécessite la soumission d'un nouveau devis.
+ 
+  </Step>
+  <Step title="Demander une révision">
+    Si le montant est trop élevé ou si la description manque de précision, vous pouvez demander une révision sans changer de prestataire. Cliquez sur **Request Revision**.
+    Rédigez un commentaire de révision (obligatoire, 1 000 caractères maximum) en précisant ce qui doit être ajusté. Exemples :
+    - « Prix trop élevé — le tarif de marché est d'environ 600 € »
+    - « Veuillez préciser la marque et la qualité des matériaux utilisés »
+    - « Décomposer le montant main-d'œuvre / fournitures »
+ 
+    Cliquez sur **Envoyer**. Le statut du devis passe à **REVISION** et le prestataire est notifié. Une fois qu'il a modifié et resoumis le devis, le statut repasse à **ASSESSMENT** et vous recevez une nouvelle notification.
+ 
+    Ce cycle `ASSESSMENT → REVISION → ASSESSMENT` peut se répéter autant de fois que nécessaire.
+ 
+  </Step>
+  <Step title="Rejeter le devis">
+    Si le devis ne peut pas être accepté (prix hors budget, prestataire inadapté, conditions inacceptables), cliquez sur **Reject Quote**.
+    Saisissez la **raison du refus** (obligatoire, 500 caractères maximum). Exemples :
+    - « Prix trop élevé par rapport au budget alloué pour ce bien »
+    - « Description insuffisante, impossible de valider les travaux »
+ 
+    Confirmez le refus. Le statut du devis passe à **REJECTED**. Le prestataire reçoit une notification avec la raison.
+ 
+    Après le refus, trois options s'offrent à vous :
+    - **Request Different Provider** — retourner en phase matchmaking pour choisir un autre prestataire
+    - **Request Revision** — donner une chance au prestataire actuel de revoir sa copie
+    - **Cancel Intervention** — clôturer l'intervention si nécessaire
+ 
+  </Step>
+</Steps>
+## Résultat attendu
+ 
+- **Approbation** : le devis est validé, le montant est verrouillé et le prestataire est autorisé à démarrer les travaux. L'intervention peut passer à l'état IN_PROGRESS.
+- **Révision** : le prestataire reçoit votre feedback et resoumets un devis ajusté pour réévaluation.
+- **Rejet** : le devis est refusé avec un motif documenté. Vous choisissez la suite du processus (nouveau prestataire, nouvelle révision ou annulation).
+## Points d'attention
+ 
+<Info>
+Le seuil déclenchant l'obligation de devis est déterminé dans cet ordre de priorité : seuil de l'intervention → seuil de la propriété → seuil de l'agence → seuil système (500 € par défaut). Si vous souhaitez ajuster ce seuil pour un bien spécifique, faites-le depuis les paramètres de la propriété.
+</Info>
+<Warning>
+L'approbation d'un devis n'entraîne aucun paiement automatique dans le MVP. La gestion financière reste externe à Intervimo.
+</Warning>
+<Info>
+L'historique de tous les devis (soumis, révisés, refusés) est conservé dans la section Devis de l'intervention, avec les timestamps de chaque action. Ces données sont disponibles pour audit et traçabilité.
+</Info>
+<Warning>
+La date limite de réponse est calculée automatiquement à partir de la date de soumission et du délai choisi par le prestataire (EXPRESS = 48 h, NORMAL = 7 jours). Si vous dépassez cette date sans décision, le système peut relancer le prestataire automatiquement — veillez à traiter les devis dans les délais.
+</Warning>

@@ -1,8 +1,109 @@
 ---
 title: Planification
-description: Documentation en cours de rédaction
+description: "Suivre la prise de rendez-vous, confirmer la présence du prestataire et superviser l'avancement de l'exécution jusqu'à la clôture."
 ---
 
 import EnCours from "../snippets/EnCours.mdx"
 
 <EnCours />
+
+## Objectif
+ 
+Cette page explique comment le gestionnaire pilote la phase de planification d'une intervention : de la proposition de créneaux de rendez-vous jusqu'à l'approbation de la clôture des travaux. C'est l'étape qui succède à l'approbation d'un devis (ou au passage en phase d'exécution si aucun devis n'était requis).
+ 
+## Quand utiliser cette page ?
+ 
+Utilisez cette page dès qu'une intervention passe au statut **EXECUTION PENDING**, c'est-à-dire lorsqu'un prestataire a été assigné et que la planification du rendez-vous doit commencer. Elle couvre également le suivi en cas de rendez-vous manqué, d'escalade ou de clôture finale.
+ 
+## Avant de commencer
+ 
+- L'intervention doit être dans la phase **EXECUTION** et au statut **EXECUTION PENDING**.
+- Un prestataire doit avoir été assigné à l'intervention.
+- Le résident concerné doit être accessible pour proposer ou confirmer des créneaux.
+## Étapes
+ 
+<Steps>
+  <Step title="Accéder à la section Rendez-vous">
+    Depuis la liste des interventions, ouvrez l'intervention concernée. Dans la page détail (le cockpit), naviguez jusqu'à la section **Appointments**.
+    Vous y voyez l'ensemble des créneaux proposés et leur statut actuel : `PENDING`, `CONFIRMED`, `REJECTED` ou `EXPIRED`.
+  </Step>
+  <Step title="Créer des créneaux de rendez-vous">
+    Cliquez sur **Add Appointment Slot** pour proposer un ou plusieurs créneaux au prestataire.
+    Pour chaque créneau, renseignez :
+    - **Start Time** — date et heure de début (obligatoire, doit être dans le futur)
+ 
+    Cliquez sur **Save Slot**. Le créneau est enregistré avec le statut `PENDING` et apparaît dans la liste. Vous pouvez créer plusieurs créneaux pour maximiser les chances de disponibilité.
+ 
+    > **Règles à respecter :** un créneau ne peut pas être planifié dans le passé. La création de créneaux ne modifie pas le statut de l'intervention.
+  </Step>
+  <Step title="Attendre la confirmation du prestataire">
+    Une fois les créneaux proposés, le prestataire dispose de **24 heures** pour confirmer l'un d'eux depuis son interface.
+    - S'il accepte un créneau → celui-ci passe à `CONFIRMED`, les autres passent à `REJECTED`, et l'intervention bascule en **EXECUTION PLANNED**.
+    - S'il refuse tous les créneaux → tous passent à `REJECTED` et le résident est invité à proposer de nouveaux créneaux. Cette contre-proposition incrémente le compteur de replanification.
+ 
+    > **Limite de replanification :** après **2 tentatives de replanification**, le système bloque toute nouvelle proposition et escalade automatiquement l'intervention vers le gestionnaire (voir étape 4).
+  </Step>
+  <Step title="Gérer les cas d'escalade ou de délai dépassé">
+    Deux situations peuvent nécessiter une intervention manuelle du gestionnaire :
+    **Délai de confirmation dépassé (24h) :** si le prestataire n'a pas confirmé un créneau dans les 24 heures, les créneaux passent à `EXPIRED` et l'intervention apparaît dans la file **Requires Attention**. Le gestionnaire peut alors :
+ 
+    | Action | Description |
+    |---|---|
+    | Contact User Directly | Contacter le résident pour confirmer sa disponibilité |
+    | Request Provider New Slots | Demander au prestataire de proposer de nouveaux créneaux |
+    | Manual Schedule | Planifier manuellement le rendez-vous |
+    | Cancel Intervention | Fermer l'intervention si aucune réponse |
+ 
+    **Limite de replanification atteinte :** si 2 tentatives ont échoué, l'intervention est escaladée. Le gestionnaire peut cliquer sur **Override and Schedule Manually**, saisir la date convenue et confirmer via **Confirm Manual Appointment**. L'intervention bascule alors en **EXECUTION PLANNED** et toutes les parties sont notifiées.
+  </Step>
+  <Step title="Suivre le rendez-vous et le début des travaux">
+    Le jour du rendez-vous, le prestataire signale son arrivée sur site en démarrant l'intervention depuis son interface. L'intervention passe alors en **IN_PROGRESS** (sous-état DIAGNOSIS).
+    Le gestionnaire peut suivre cet avancement en temps réel depuis la page détail :
+    - Arrivée à l'heure → aucune action requise.
+    - Arrivée en retard (> 15 min) → une notification est envoyée automatiquement au gestionnaire.
+    - Rendez-vous non honoré → le prestataire ou le résident peut signaler une absence (voir étape 6).
+  </Step>
+  <Step title="Gérer un rendez-vous manqué">
+    Si l'une des parties ne s'est pas présentée, le rendez-vous doit être signalé comme **manqué**.
+    - **Le prestataire signale l'absence du résident** → il sélectionne *"Resident did not show up"* et peut ajouter une note.
+    - **Le résident signale l'absence du prestataire** → il sélectionne *"Report Provider No-Show"*.
+ 
+    Dans les deux cas :
+    - Le rendez-vous passe au statut `MISSED`.
+    - Le gestionnaire reçoit une notification prioritaire.
+    - L'intervention retourne au statut **EXECUTION PENDING** pour reprogrammer un nouveau rendez-vous.
+ 
+    > **Attention :** un rendez-vous ne peut être marqué comme manqué qu'après un délai de tolérance de 15 à 30 minutes après l'heure prévue. Les absences répétées d'un prestataire sont enregistrées dans ses statistiques de performance.
+  </Step>
+  <Step title="Approuver la clôture et archiver">
+    Une fois les travaux terminés, l'intervention passe au statut **EXECUTION CLOSURE**. Le gestionnaire doit valider la fin des travaux pour archiver l'intervention.
+    Depuis la page détail :
+    1. Vérifiez que le statut d'exécution est bien **EXECUTION CLOSURE**.
+    2. Cliquez sur **Approve & Archive**.
+ 
+    L'intervention est archivée :
+    - Le statut d'exécution devient **DONE**.
+    - La phase de l'intervention devient **ARCHIVED**.
+    - L'intervention disparaît de la liste active mais reste consultable dans l'historique.
+ 
+    > Une intervention archivée ne peut plus être modifiée.
+  </Step>
+</Steps>
+## Résultat attendu
+ 
+À l'issue de ce parcours, un rendez-vous est planifié et confirmé entre le résident et le prestataire, les travaux sont réalisés, et l'intervention est archivée avec un historique complet des créneaux, des présences et des éventuelles escalades.
+ 
+## Points d'attention
+ 
+<Info>
+Le compteur de replanification s'incrémente à chaque contre-proposition après un refus du prestataire. La proposition initiale du résident ne compte pas. Au-delà de 2 tentatives, seul le gestionnaire peut planifier manuellement.
+</Info>
+<Info>
+Un compte à rebours s'affiche dans l'interface 2 heures avant l'expiration du délai de confirmation de 24 heures. Surveillez les interventions en statut **EXECUTION PENDING** dans votre tableau de bord pour anticiper les blocages.
+</Info>
+<Warning>
+Un rendez-vous doit impérativement être au statut `HONORED` (présence confirmée) pour que l'intervention puisse passer à l'état **IN_PROGRESS**. Sans cette étape, les travaux ne peuvent pas officiellement démarrer.
+</Warning>
+<Warning>
+Il est impossible d'approuver la clôture si les travaux ne sont pas terminés. Le statut d'exécution doit être **EXECUTION CLOSURE** avant de pouvoir cliquer sur *Approve & Archive*.
+</Warning>

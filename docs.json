@@ -3,11 +3,11 @@
   "theme": "mint",
   "name": "Intervimo Docs",
   "colors": {
-    "primary": "#16A34A",
+    "primary": "#FD593E",
     "light": "#07C983",
     "dark": "#15803D"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
   "navigation": {
   "pages": [
     {
@@ -60,7 +60,7 @@
   }
 },
   "logo": {
-    "light": "/logo/light.svg",
+    "light": "/logo/intervimo_logo.png",
     "dark": "/logo/dark.svg"
   },
   "navbar": {

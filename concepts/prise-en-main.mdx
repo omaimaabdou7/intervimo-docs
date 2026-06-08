@@ -1,8 +1,143 @@
 ---
-title: prise-en-main
-description: Documentation en cours de rédaction
+title: Prise en main
+description: "Comment chaque acteur accède à Intervimo : lien magique pour le locataire, inscription et connexion pour le gestionnaire et le prestataire."
 ---
 
 import EnCours from "../snippets/EnCours.mdx"
 
 <EnCours />
+## Objectif
+ 
+Cette page explique comment chaque type d'acteur entre sur la plateforme Intervimo. Les modes d'accès sont volontairement différents selon le rôle : le locataire n'a pas de compte à créer, tandis que le gestionnaire et le prestataire passent par une inscription dédiée.
+ 
+## Quand utiliser cette page ?
+ 
+Consultez cette page lors d'une première connexion à Intervimo, ou pour accompagner un nouvel utilisateur (locataire, collaborateur d'agence, entreprise prestataire) dans ses premiers pas sur la plateforme.
+ 
+## Avant de commencer
+ 
+- Pour le **locataire** : avoir reçu un lien d'invitation envoyé par le gestionnaire (par email ou SMS).
+- Pour le **gestionnaire** : disposer des informations légales de l'agence (nom, identifiant à 14 chiffres, adresse, forme juridique).
+- Pour le **prestataire** : avoir été invité par un gestionnaire via la plateforme — l'inscription autonome n'est pas possible.
+---
+ 
+## Le locataire — accès par lien magique
+ 
+Le locataire n'a pas de compte à créer. Il accède à Intervimo uniquement via un **lien magique** généré et envoyé par son gestionnaire.
+ 
+<Steps>
+  <Step title="Recevoir le lien d'invitation">
+    Le gestionnaire génère un lien d'invitation depuis son interface, sélectionne le bien concerné et choisit le type d'occupant (locataire ou propriétaire). Le lien est envoyé par email ou transmis manuellement.
+    Le lien est à usage unique et expire après un délai défini. Passé ce délai, le gestionnaire peut en générer un nouveau.
+  </Step>
+  <Step title="Ouvrir le lien et accéder à l'espace résident">
+    En cliquant sur le lien, le locataire est directement connecté à son espace personnel, associé au bien correspondant. Aucun formulaire d'inscription n'est à remplir.
+    > Si le gestionnaire a créé le compte manuellement en amont, le locataire reçoit ses identifiants (email + mot de passe auto-généré) de la main du gestionnaire et peut se connecter directement sur la plateforme.
+  </Step>
+  <Step title="Suivre le parcours d'onboarding">
+    Lors du premier accès, un parcours d'onboarding guidé se lance automatiquement. Il présente les fonctionnalités disponibles et peut être parcouru ou passé étape par étape. Une fois terminé, il ne s'affiche plus.
+  </Step>
+</Steps>
+<Info>
+Le locataire ne peut créer une intervention que pour les propriétés qui lui sont associées. Si aucun bien n'est lié à son compte, il doit contacter son gestionnaire.
+</Info>
+---
+ 
+## Le gestionnaire — inscription de l'agence
+ 
+Le gestionnaire crée lui-même le compte de son agence via le formulaire d'inscription public.
+ 
+<Steps>
+  <Step title="Accéder au formulaire d'inscription">
+    Depuis la page d'accueil d'Intervimo, cliquer sur **Rejoindre Intervimo**. Le formulaire d'inscription agence s'affiche.
+  </Step>
+  <Step title="Renseigner les informations de l'agence">
+    Compléter les champs obligatoires :
+    **Informations de l'agence**
+    - Nom de l'agence
+    - Type d'agence (Personne physique ou Entreprise)
+    - Identifiant de l'agence (14 caractères, unique)
+    - Adresse complète
+    - Forme juridique
+    - Téléphone
+    - Email
+ 
+    **Informations du directeur**
+    - Nom et prénom
+    - Email (unique sur la plateforme)
+    - Numéro de téléphone (optionnel)
+  </Step>
+  <Step title="Soumettre la demande">
+    Cliquer sur **S'inscrire**. En cas de succès, le message *"Agency registration successful"* s'affiche. La demande est créée avec le statut **En attente de vérification**.
+    Le directeur est automatiquement connecté mais dispose d'un accès limité tant que l'agence n'est pas vérifiée.
+  </Step>
+  <Step title="Attendre la vérification de l'agence">
+    L'agence est vérifiée manuellement par l'équipe Intervimo. Pendant cette période, un bandeau informatif s'affiche :
+    *"Votre agence est en cours de vérification. Certaines fonctionnalités sont temporairement indisponibles."*
+ 
+    Les actions suivantes sont bloquées jusqu'à validation :
+    - Créer une intervention
+    - Inviter des prestataires
+    - Inviter des résidents
+ 
+    Une fois la vérification effectuée, l'agence passe au statut **Vérifié** et toutes les fonctionnalités sont débloquées.
+  </Step>
+  <Step title="Suivre le parcours d'onboarding">
+    Lors de la première connexion complète, le parcours d'onboarding guidé se lance automatiquement. Il accompagne le directeur dans la configuration initiale de l'agence (ajout de biens, invitation de collaborateurs, etc.) et peut être passé à tout moment.
+  </Step>
+</Steps>
+<Info>
+L'identifiant de l'agence doit être unique sur la plateforme. Si un identifiant identique existe déjà, un message d'erreur *"An agency with this ID already exists"* s'affiche.
+</Info>
+---
+ 
+## Le prestataire — inscription sur invitation
+ 
+Un prestataire ne peut pas s'inscrire de manière autonome. Son accès est initié par un gestionnaire qui l'invite depuis la plateforme.
+ 
+<Steps>
+  <Step title="Recevoir l'invitation du gestionnaire">
+    Le gestionnaire envoie une invitation email depuis son interface (section Prestataires). L'email contient un lien vers le formulaire d'inscription dédié aux entreprises prestataires.
+  </Step>
+  <Step title="Renseigner les informations de l'entreprise">
+    En suivant le lien, compléter le formulaire d'inscription :
+    - Nom de l'entreprise
+    - Identifiant de l'entreprise (14 caractères, unique)
+    - Types de services proposés (au moins un obligatoire)
+    - Adresse
+    - Téléphone
+    - Email
+ 
+    Soumettre le formulaire. Une demande est créée avec le statut **En attente de vérification**.
+  </Step>
+  <Step title="Ajouter les agents de l'entreprise">
+    Une fois l'entreprise enregistrée, le responsable prestataire (owner) peut inviter ses propres agents via la gestion de l'équipe. Chaque agent dispose d'un accès individuel à la plateforme pour suivre et exécuter les interventions qui lui sont assignées.
+    → Voir le [guide Prestataire](/guides/prestataire) pour le détail de la gestion des agents.
+  </Step>
+  <Step title="Suivre le parcours d'onboarding">
+    Lors de la première connexion, le parcours d'onboarding guidé se lance automatiquement et présente les fonctionnalités disponibles (mandats, créneaux, devis, etc.).
+  </Step>
+</Steps>
+<Warning>
+L'invitation du gestionnaire crée un **partenariat automatique** entre l'agence et l'entreprise prestataire. Un prestataire ne peut intervenir sur les interventions d'une agence que s'il est partenaire de celle-ci.
+</Warning>
+---
+ 
+## Récapitulatif des modes d'accès
+ 
+| Acteur | Mode d'accès | Compte requis | Initié par |
+|---|---|---|---|
+| Locataire / Propriétaire | Lien magique (ou identifiants transmis par le gestionnaire) | Non (ou créé par le gestionnaire) | Gestionnaire |
+| Gestionnaire (directeur) | Inscription publique + vérification | Oui | Lui-même |
+| Gestionnaire (admin / assistant) | Invitation par le directeur | Oui | Directeur d'agence |
+| Prestataire (owner) | Invitation par un gestionnaire | Oui | Gestionnaire |
+| Prestataire (admin / agent) | Invitation par le owner prestataire | Oui | Owner prestataire |
+ 
+## Points d'attention
+ 
+<Info>
+Le lien magique du locataire est à **usage unique**. Une fois utilisé, il est invalidé. Si le locataire doit se reconnecter ultérieurement, il utilisera ses identifiants de compte ou demandera un nouveau lien à son gestionnaire.
+</Info>
+<Warning>
+Pendant la phase **En attente de vérification**, ni le gestionnaire ni le prestataire ne peuvent utiliser les fonctionnalités principales de la plateforme. Prévoir ce délai lors de l'onboarding d'une nouvelle agence ou d'un nouveau prestataire.
+</Warning>
