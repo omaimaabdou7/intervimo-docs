@@ -1,0 +1,106 @@
+:root {
+  --intervimo-coral: #FD593E;
+  --intervimo-coral-pressed: #E64A30;
+  --intervimo-coral-light: #FF8A70;
+}
+
+.nav-logo {
+  height: 3.55rem !important;
+  max-height: 3.55rem !important;
+  width: auto !important;
+  cursor: pointer;
+  transition: opacity 150ms ease, filter 150ms ease;
+}
+
+a:has(.nav-logo) {
+  cursor: pointer;
+}
+
+a:has(.nav-logo):hover .nav-logo {
+  filter: saturate(1.08) brightness(0.95);
+}
+
+.sidebar-group-header {
+  margin-top: 1.05rem;
+  margin-bottom: 0.45rem;
+  color: var(--intervimo-coral) !important;
+  font-size: 0.96rem;
+  font-weight: 750;
+  letter-spacing: 0;
+  transition: color 150ms ease;
+}
+
+.sidebar-group-header:hover,
+.sidebar-title:hover {
+  color: var(--intervimo-coral-pressed) !important;
+}
+
+.sidebar-group-icon {
+  display: none !important;
+}
+
+.sidebar-group a,
+.sidebar-group a:hover,
+.sidebar-group a[aria-current="page"],
+.sidebar-group a[aria-current="true"],
+.sidebar-group a[data-active="true"] {
+  font-size: 0.92rem !important;
+  line-height: 1.35rem !important;
+  font-weight: 400 !important;
+  text-shadow: none !important;
+  transition: color 150ms ease, background-color 150ms ease;
+}
+
+.sidebar-group a:hover {
+  color: var(--intervimo-coral) !important;
+}
+
+.sidebar-group a[aria-current="page"],
+.sidebar-group a[aria-current="true"],
+.sidebar-group a[data-active="true"] {
+  color: var(--intervimo-coral) !important;
+  background-color: color-mix(in srgb, var(--intervimo-coral) 12%, transparent) !important;
+  font-weight: 500 !important;
+}
+
+.mdx-content a,
+.prose a {
+  color: var(--intervimo-coral);
+  text-decoration-color: color-mix(in srgb, var(--intervimo-coral) 45%, transparent);
+  text-underline-offset: 0.18em;
+}
+
+.mdx-content a:hover,
+.prose a:hover {
+  color: var(--intervimo-coral-pressed);
+}
+
+.toc a {
+  color: inherit;
+  transition: color 150ms ease;
+}
+
+.toc a:hover,
+.toc a[aria-current="true"],
+.toc a[aria-current="location"],
+.toc a[aria-current="page"],
+.toc a[data-active="true"],
+.toc .active > a {
+  color: var(--intervimo-coral) !important;
+}
+
+html[class~="dark"] .sidebar-group-header,
+html[class~="dark"] .sidebar-group a:hover,
+html[class~="dark"] .sidebar-group a[aria-current="page"],
+html[class~="dark"] .sidebar-group a[aria-current="true"],
+html[class~="dark"] .sidebar-group a[data-active="true"],
+html[class~="dark"] .mdx-content a,
+html[class~="dark"] .prose a,
+html[class~="dark"] .toc a:hover,
+html[class~="dark"] .toc a[aria-current="true"],
+html[class~="dark"] .toc a[aria-current="location"],
+html[class~="dark"] .toc a[aria-current="page"],
+html[class~="dark"] .toc a[data-active="true"],
+html[class~="dark"] .toc .active > a {
+  color: var(--intervimo-coral-light) !important;
+}

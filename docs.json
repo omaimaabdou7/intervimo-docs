@@ -2,12 +2,31 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "Intervimo",
+  "description": "Documentation officielle Intervimo pour les locataires, gestionnaires et prestataires.",
   "colors": {
     "primary": "#FD593E",
     "light": "#FF8A70",
     "dark": "#E64A30"
   },
   "favicon": "/favicon.png",
+  "appearance": {
+    "default": "system"
+  },
+  "background": {
+    "color": {
+      "light": "#F3F1ED",
+      "dark": "#0E0D0B"
+    }
+  },
+  "styling": {
+    "eyebrows": "breadcrumbs"
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "search": {
+    "prompt": "Rechercher dans la documentation Intervimo..."
+  },
   "navigation": {
     "pages": [
       {
@@ -45,8 +64,9 @@
     ]
   },
   "logo": {
-    "light": "/logo/intervimo_logo.png",
-    "dark": "/logo/intervimo_logo.png"
+    "light": "/logo/intervimo_wordmark.png",
+    "dark": "/logo/intervimo_wordmark.png",
+    "href": "/"
   },
   "contextual": {
     "options": [
