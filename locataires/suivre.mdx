@@ -5,11 +5,13 @@ description: "Guide simple pour suivre l'avancement d'une intervention depuis l'
 
 import EnCours from "../snippets/EnCours.mdx"
 
+<EnCours />
+
 ## Objectif
 
 Cette page explique comment suivre une intervention depuis l'espace locataire.
 
-Elle vous aide à comprendre l'état de votre demande, à répondre au gestionnaire, et à agir lorsque l'interface vous le propose.
+Elle vous aide à comprendre l'état de votre demande, à lire la chronologie, à répondre au gestionnaire et à savoir quoi faire lorsque l'interface vous propose une action.
 
 ## Quand utiliser cette page ?
 
@@ -19,10 +21,12 @@ Elle est utile pour :
 
 - vérifier l'avancement de l'intervention ;
 - comprendre ce que signifie le statut affiché ;
+- voir si un gestionnaire est assigné ;
 - répondre à une demande de précision ;
-- confirmer un créneau si un rendez-vous est proposé ;
-- suivre les travaux jusqu'à leur fin ;
-- valider ou confirmer les travaux si l'interface le permet.
+- suivre les échanges liés à l'intervention ;
+- savoir quoi faire si aucune action n'est affichée.
+
+Certaines actions, comme confirmer un créneau ou valider des travaux, peuvent dépendre de l'étape en cours. Elles doivent être suivies seulement si l'interface les propose.
 
 ## Avant de commencer
 
@@ -33,10 +37,12 @@ Depuis la page d'accueil, ouvrez l'intervention que vous souhaitez suivre. Vous 
 ## Étapes
 
 <Steps>
-  <Step title="Ouvrir l'intervention">
-    Depuis votre espace locataire, sélectionnez l'intervention concernée.
+  <Step title="Ouvrir l'intervention depuis la liste">
+    Depuis votre espace locataire, consultez la liste de vos interventions.
 
-    La carte de l'intervention affiche déjà les informations principales : titre, description courte, niveau d'urgence et statut actuel.
+    Chaque carte affiche les informations principales : le titre, une description courte, le secteur, l'urgence si elle est indiquée et le statut actuel.
+
+    Sélectionnez l'intervention concernée pour ouvrir sa page de détail.
 
     <img
       src="/images/locataire-suivre-liste-execution.png"
@@ -45,16 +51,9 @@ Depuis la page d'accueil, ouvrez l'intervention que vous souhaitez suivre. Vous 
   </Step>
 
   <Step title="Lire le statut">
-    Consultez le statut affiché sur la carte ou dans le détail de l'intervention.
+    Le statut indique l'étape actuelle de l'intervention.
 
-    Les statuts peuvent être présentés avec des mots simples :
-
-    - Qualification : le gestionnaire examine le signalement.
-    - Mise en relation : un prestataire est recherché ou sélectionné.
-    - Exécution : l'intervention avance vers le rendez-vous, les travaux ou leur clôture.
-    - Rejetée : la demande n'a pas été acceptée.
-    - Annulée : l'intervention a été annulée.
-    - Archivée : l'intervention est terminée et conservée dans l'historique.
+    Il permet de comprendre si la demande est encore en cours d'examen, si un prestataire est recherché, si l'intervention est en exécution ou si elle est terminée.
 
     <img
       src="/images/locataire-suivre-statut.png"
@@ -62,16 +61,46 @@ Depuis la page d'accueil, ouvrez l'intervention que vous souhaitez suivre. Vous 
     />
   </Step>
 
-  <Step title="Consulter la chronologie">
-    Lisez les événements affichés dans la chronologie.
+  <Step title="Comprendre les statuts">
+    Les statuts sont affichés avec des mots simples.
 
-    Elle permet de voir les grandes étapes : signalement, qualification, prestataire assigné, travaux terminés.
+    - Créée : votre demande a été envoyée et attend sa prise en charge.
+    - Qualification : le gestionnaire examine votre signalement.
+    - Mise en relation : l'agence recherche ou contacte un prestataire.
+    - Exécution : un prestataire intervient ou prépare son intervention.
+    - Rejetée : la demande n'a pas été acceptée.
+    - Annulée : l'intervention a été arrêtée avant sa fin.
+    - Archivée : l'intervention est conservée dans l'historique.
+
+    Selon le statut de l'intervention, certaines actions peuvent apparaître ou disparaître.
   </Step>
 
-  <Step title="Répondre à une demande de précision">
-    Si le gestionnaire a besoin d'informations, ouvrez la conversation de l'intervention.
+  <Step title="Consulter la chronologie">
+    La chronologie présente les grandes étapes de l'intervention dans l'ordre.
 
-    Répondez simplement à la demande de précision. Ajoutez les détails utiles pour aider le gestionnaire à qualifier la demande.
+    Elle peut indiquer, par exemple :
+
+    - la date du signalement ;
+    - l'assignation d'un gestionnaire ;
+    - la qualification de la demande ;
+    - l'assignation d'un prestataire ;
+    - la fin de l'intervention, si elle est renseignée.
+
+    Cette chronologie sert à comprendre ce qui s'est déjà passé. Elle ne demande pas toujours une action de votre part.
+  </Step>
+
+  <Step title="Comprendre le gestionnaire assigné">
+    Si un gestionnaire est affiché, cela signifie qu'une personne de l'agence suit votre demande.
+
+    Ce gestionnaire peut examiner le signalement, demander des précisions, contacter un prestataire et suivre l'avancement de l'intervention.
+
+    Si aucun gestionnaire n'est encore affiché, cela peut simplement vouloir dire que la demande est encore en attente de prise en charge.
+  </Step>
+
+  <Step title="Ouvrir la conversation">
+    Si le bouton "Voir la conversation" est disponible, ouvrez-le pour consulter les échanges liés à l'intervention.
+
+    La conversation sert surtout à répondre au gestionnaire lorsqu'il a besoin d'une précision.
 
     <img
       src="/images/locataire-suivre-demande-precision.png"
@@ -79,37 +108,49 @@ Depuis la page d'accueil, ouvrez l'intervention que vous souhaitez suivre. Vous 
     />
   </Step>
 
-  <Step title="Confirmer un créneau si nécessaire">
-    Si un créneau est proposé, vérifiez la date et l'heure.
+  <Step title="Répondre à une demande de précision">
+    Si le gestionnaire pose une question, répondez simplement et clairement.
 
-    Confirmez le créneau si vous êtes disponible. Si l'interface le permet, proposez un autre créneau lorsque celui-ci ne vous convient pas.
+    Vous pouvez préciser :
+
+    - l'endroit exact du problème ;
+    - ce que vous voyez ou entendez ;
+    - depuis quand le problème existe ;
+    - si la situation a changé depuis le signalement ;
+    - vos disponibilités, si cela est demandé.
+
+    Une réponse claire permet au gestionnaire de qualifier la demande plus facilement.
   </Step>
 
-  <Step title="Suivre les travaux">
-    Lorsque l'intervention est en exécution, suivez les indications affichées.
+  <Step title="Suivre les actions disponibles">
+    Si l'interface propose une action, lisez bien le texte affiché avant de continuer.
 
-    Certaines actions apparaissent seulement au bon moment, par exemple avant un rendez-vous, pendant les travaux, ou après leur fin.
-  </Step>
+    Par exemple, selon le statut de l'intervention, l'interface peut proposer de répondre à un message, de suivre un créneau ou de confirmer une étape.
 
-  <Step title="Valider les travaux si l'interface le propose">
-    Après les travaux, l'interface peut vous demander de confirmer que tout est terminé.
-
-    Vérifiez le résultat avant de valider. Si quelque chose reste à traiter, suivez les options affichées dans l'application.
+    Pour les créneaux ou la validation des travaux, suivez uniquement ce qui est affiché dans l'application. Si l'action n'est pas disponible, n'essayez pas de la faire ailleurs.
   </Step>
 </Steps>
+
+## Si aucune action n'apparaît
+
+Si aucune action n'est affichée, cela signifie généralement que l'étape en cours dépend de l'agence, du gestionnaire ou du prestataire.
+
+Dans ce cas, vous pouvez simplement suivre le statut et la chronologie.
+
+Si une conversation est disponible et que vous pensez qu'une information importante manque, vous pouvez écrire au gestionnaire de manière courte et factuelle.
 
 ## Résultat attendu
 
 Vous savez où en est l'intervention et quelle action est attendue de votre part.
 
-Si aucune action n'est affichée, cela signifie généralement que le gestionnaire ou le prestataire doit poursuivre l'étape en cours.
+Si aucune action n'est affichée, vous pouvez attendre la prochaine mise à jour.
 
 ## Points d'attention
 
-- Les actions disponibles dépendent de l'étape actuelle de l'intervention.
+- Les actions disponibles dépendent du statut actuel de l'intervention.
 - Une demande de précision doit être traitée rapidement pour éviter de ralentir la qualification.
-- Ne confirmez un créneau que si vous êtes disponible.
-- Avant de valider les travaux, vérifiez que le problème signalé est bien résolu.
+- Ne confirmez un créneau que si l'interface le propose et si vous êtes disponible.
+- Avant de valider des travaux, si l'action est disponible, vérifiez que le problème signalé est bien résolu.
 - Si une information semble incorrecte, contactez le gestionnaire depuis la conversation lorsque celle-ci est disponible.
 
 <Info>

@@ -5,11 +5,13 @@ description: "Consulter un mandat reçu et envoyer un devis au gestionnaire."
 
 import EnCours from "../snippets/EnCours.mdx"
 
+<EnCours />
+
 ## Objectif
 
-Cette page explique comment traiter un mandat reçu dans Intervimo en tant que prestataire.
+Cette page explique comment traiter une demande reçue dans Intervimo en tant que prestataire.
 
-Le but est de consulter la demande, vérifier si vous pouvez intervenir, puis transmettre un devis au gestionnaire.
+Le but est de consulter l'intervention, vérifier si vous pouvez vous positionner, accepter ou refuser la demande, puis transmettre un devis lorsque l'action est disponible.
 
 ## Quand utiliser cette page ?
 
@@ -17,37 +19,44 @@ Utilisez cette page quand une nouvelle demande ou un mandat apparaît dans votre
 
 Elle est utile pour :
 
-- consulter les informations de l’intervention ;
+- consulter les informations de l'intervention ;
 - vérifier le problème signalé ;
+- décider si vous pouvez intervenir ;
 - accepter ou refuser la demande ;
-- préparer un devis ;
-- envoyer le devis au gestionnaire.
+- préparer un chiffrage ;
+- envoyer un devis au gestionnaire.
 
 ## Avant de commencer
 
 Avant de répondre, vérifiez les informations disponibles :
 
 - le type de problème ;
-- le lieu de l’intervention ;
-- le niveau d’urgence ;
+- l'adresse ou le lieu de l'intervention ;
+- le niveau d'urgence ;
+- votre disponibilité ;
+- votre domaine de service ;
 - les informations transmises par le gestionnaire ;
 - les notes disponibles dans la demande.
 
-Si une information importante manque, gardez-la en tête avant de vous engager ou indiquez-le dans vos notes si l’interface le permet.
+Si une information importante manque, gardez-la en tête avant de vous engager ou indiquez-le dans vos notes si l'interface le permet.
+
+<Info>
+  Certaines actions peuvent nécessiter un abonnement actif selon votre compte.
+</Info>
 
 ## Étapes
 
 <Steps>
-  <Step title="Ouvrir les mandats reçus">
+  <Step title="Ouvrir les demandes reçues">
     Depuis votre espace prestataire, ouvrez la partie dédiée aux interventions ou aux demandes reçues.
 
-    Repérez la demande à traiter. Elle peut être affichée avec son statut, son secteur et son niveau d’urgence.
+    Repérez la demande à traiter. Elle peut être affichée avec son statut, son secteur et son niveau d'urgence.
   </Step>
 
-  <Step title="Consulter le détail du mandat">
-    Ouvrez le mandat pour lire les informations disponibles.
+  <Step title="Consulter le détail de la demande">
+    Ouvrez la demande pour lire les informations disponibles.
 
-    Vérifiez le titre, la description, le lieu de l’intervention et les éléments ajoutés par le gestionnaire.
+    Vérifiez le titre, la description, le lieu de l'intervention et les éléments ajoutés par le gestionnaire.
 
     <img
       src="/images/prestataire-reception-mandat.png"
@@ -56,27 +65,53 @@ Si une information importante manque, gardez-la en tête avant de vous engager o
   </Step>
 
   <Step title="Vérifier si vous pouvez intervenir">
-    Vérifiez que la demande correspond à votre activité, à votre zone d’intervention et à vos disponibilités.
+    Avant d'accepter, vérifiez que la demande correspond à votre activité, à votre zone d'intervention et à vos disponibilités.
 
-    Si certains éléments ne sont pas clairs, notez les points à confirmer avant de vous engager.
+    Posez-vous quelques questions simples :
+
+    - Le problème correspond-il à votre métier ?
+    - L'adresse est-elle dans votre secteur ?
+    - Le niveau d'urgence est-il compatible avec votre planning ?
+    - Avez-vous assez d'informations pour vous engager ?
+    - Un diagnostic sur place est-il nécessaire avant le chiffrage final ?
   </Step>
 
   <Step title="Accepter ou refuser la demande">
     Acceptez la demande si vous souhaitez poursuivre.
 
     Refusez-la si vous ne pouvez pas intervenir ou si la demande ne correspond pas à votre activité.
+
+    Accepter une demande ne signifie pas forcément que l'intervention vous est attribuée définitivement. L'agence peut encore examiner votre proposition, attendre un devis ou valider une étape avant de confirmer la suite.
+  </Step>
+
+  <Step title="Comprendre l'état de votre proposition">
+    La demande peut passer par plusieurs états simples.
+
+    - Demande reçue : vous devez encore répondre.
+    - Acceptée ou en évaluation : vous avez indiqué que vous souhaitez poursuivre, et l'agence examine la proposition.
+    - Offre finalisée : vous avez transmis les informations nécessaires pour que l'agence décide.
+    - Devis envoyé : votre chiffrage a été transmis.
+    - Attente de validation par l'agence : l'agence doit encore confirmer la suite.
+
+    Les mots exacts peuvent varier selon l'écran, mais l'idée reste la même : votre réponse est examinée avant la confirmation finale.
   </Step>
 
   <Step title="Préparer le devis">
     Préparez votre chiffrage avec les informations connues.
 
-    Indiquez le montant TTC si vous pouvez déjà le confirmer. Ajoutez une note courte pour expliquer ce qui est inclus ou ce qui reste à vérifier.
+    Indiquez clairement ce qui est inclus dans votre prix. Si le montant dépend d'une visite ou d'un diagnostic, précisez-le dans la note si l'interface le permet.
+
+    Les informations utiles sont généralement :
+
+    - une note courte ;
+    - le prix TTC ;
+    - un document PDF du devis, si vous en avez un et si l'action est disponible.
   </Step>
 
   <Step title="Soumettre le devis">
-    Ouvrez l’action de finalisation du devis.
+    Ouvrez l'action de finalisation du devis.
 
-    Renseignez les informations demandées : notes, prix TTC et document du devis si nécessaire.
+    Renseignez les informations demandées : notes, prix TTC et document du devis si vous disposez d'un PDF.
 
     <img
       src="/images/prestataire-soumission-devis-formulaire.png"
@@ -96,12 +131,13 @@ Si une information importante manque, gardez-la en tête avant de vous engager o
 
 Votre réponse est transmise au gestionnaire.
 
-Si vous avez envoyé un devis, le gestionnaire peut l’examiner. Il peut ensuite accepter votre proposition, demander des précisions ou choisir une autre suite pour l’intervention.
+Si vous avez envoyé un devis, le gestionnaire peut l'examiner. Il peut ensuite valider votre proposition, choisir une autre suite pour l'intervention ou attendre des informations complémentaires selon le statut de l'intervention.
 
-## Points d’attention
+## Points d'attention
 
-- Répondez seulement si vous avez assez d’informations pour vous positionner.
+- Répondez seulement si vous avez assez d'informations pour vous positionner.
+- Vérifiez le type de problème, l'adresse, l'urgence et votre disponibilité avant d'accepter.
 - Indiquez clairement ce qui est inclus dans le devis.
-- Ajoutez une note si le montant dépend d’une visite ou d’un diagnostic.
+- Ajoutez une note si le montant dépend d'une visite ou d'un diagnostic.
 - Ne soumettez pas un devis tant que les informations importantes ne sont pas vérifiées.
-- Certaines actions peuvent dépendre du statut actuel de la demande.
+- Certaines actions peuvent dépendre du statut actuel de la demande et de votre abonnement.
