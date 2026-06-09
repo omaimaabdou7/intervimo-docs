@@ -5,58 +5,82 @@ description: "Suivre une intervention acceptée, proposer un créneau et avancer
 
 import EnCours from "../snippets/EnCours.mdx"
 
+<EnCours />
+
 ## Objectif
 
 Cette page explique comment suivre une intervention acceptée en tant que prestataire.
 
-Elle couvre les étapes principales : consulter l’intervention, proposer un créneau, préparer le déplacement, suivre l’exécution et terminer les travaux lorsque l’action est disponible.
+La phase d'exécution correspond au moment où l'intervention passe de la préparation à l'organisation concrète : mandat, créneau, déplacement, action sur place et suivi jusqu'à la fin.
 
 ## Quand utiliser cette page ?
 
-Utilisez cette page lorsqu’une intervention vous est confiée après validation par le gestionnaire.
+Utilisez cette page lorsqu'une intervention vous est confiée après validation par le gestionnaire.
 
 Elle est utile pour :
 
 - retrouver une intervention acceptée ;
-- consulter les informations de l’intervention ;
+- consulter les informations de l'intervention ;
 - télécharger le mandat si nécessaire ;
 - proposer un créneau ;
-- suivre les consignes avant le déplacement ;
-- documenter les travaux ;
-- terminer l’intervention lorsque l’interface le permet.
+- confirmer un créneau si l'action est disponible ;
+- démarrer l'intervention si le bouton est disponible ;
+- terminer les travaux ou terminer une session selon le statut affiché.
 
 ## Avant de commencer
 
-Avant d’aller sur place, vérifiez :
+Avant d'aller sur place, vérifiez :
 
-- l’adresse et les informations d’accès ;
+- l'adresse et les informations d'accès ;
 - le problème signalé ;
-- le type d’intervention attendu ;
-- le niveau d’urgence ;
-- le devis validé ;
+- le type d'intervention attendu ;
+- le niveau d'urgence ;
+- le devis validé, s'il existe ;
 - les documents utiles, comme le mandat, si disponibles.
 
-Préparez aussi les notes que vous devrez ajouter après l’intervention si l’interface le permet.
+Si une information manque, contactez le gestionnaire par le canal prévu dans l'application.
+
+## Comprendre les états d'exécution
+
+L'écran d'exécution peut afficher plusieurs états.
+
+- En attente : l'intervention attend une prochaine action, souvent un créneau.
+- Planifiée : un créneau est confirmé ou l'intervention est organisée.
+- En cours : l'intervention a commencé.
+- Clôture : les travaux sont terminés et attendent une validation par l'agence ou le locataire selon le cas.
+- Terminée : l'intervention est finalisée.
+- Annulée : l'intervention ou l'exécution a été arrêtée.
+- Session terminée : une session est finie, mais une suite peut être nécessaire selon le statut de l'intervention.
+
+Les actions disponibles changent selon le statut de l'intervention. Suivez toujours les boutons affichés dans l'interface.
 
 ## Étapes
 
 <Steps>
-  <Step title="Ouvrir l’intervention acceptée">
+  <Step title="Ouvrir l'intervention acceptée">
     Depuis votre espace prestataire, ouvrez la liste des interventions.
 
-    Sélectionnez l’intervention concernée pour afficher son détail.
+    Sélectionnez l'intervention concernée pour afficher son détail.
   </Step>
 
-  <Step title="Vérifier les informations de l’intervention">
+  <Step title="Vérifier les informations de l'intervention">
     Relisez le problème signalé, le lieu, la priorité et les informations utiles.
 
+    Vérifiez aussi si l'intervention correspond à un diagnostic, à des travaux ou à une suite déjà validée.
+  </Step>
+
+  <Step title="Télécharger le mandat">
     Si un mandat est disponible, téléchargez-le avant le déplacement.
+
+    Le mandat sert de récapitulatif. Il peut vous aider à retrouver les informations principales de l'intervention lorsque vous préparez votre intervention ou lorsque vous êtes sur place.
   </Step>
 
   <Step title="Gérer le créneau">
-    Dans l’écran d’exécution, sélectionnez un jour dans le calendrier pour proposer un créneau.
+    Dans l'écran d'exécution, sélectionnez un jour dans le calendrier pour proposer un créneau si l'action est disponible.
 
-    Vérifiez la date et l’heure avant d’envoyer votre proposition.
+    Vérifiez la date et l'heure avant d'envoyer votre proposition.
+
+    Si un créneau a été proposé par une autre personne et que l'interface vous permet de le confirmer, confirmez-le seulement si vous êtes réellement disponible.
 
     <img
       src="/images/prestataire-execution-intervention.png"
@@ -64,36 +88,44 @@ Préparez aussi les notes que vous devrez ajouter après l’intervention si l�
     />
   </Step>
 
-  <Step title="Préparer l’intervention">
+  <Step title="Préparer l'intervention">
     Avant le rendez-vous, vérifiez que vous disposez des informations nécessaires pour intervenir.
 
-    En cas d’information manquante, contactez le gestionnaire par le canal prévu dans l’application.
+    Relisez la description, le secteur, l'urgence, le devis validé si disponible et les informations d'accès.
   </Step>
 
-  <Step title="Réaliser les travaux">
-    Le jour prévu, réalisez l’intervention selon les informations disponibles.
+  <Step title="Démarrer l'intervention si l'action est disponible">
+    Le jour prévu, utilisez le bouton de démarrage seulement s'il est affiché dans l'interface.
 
-    Notez les éléments importants : diagnostic, action réalisée, pièce remplacée, ou suite à prévoir.
+    Si le bouton n'est pas disponible, cela signifie généralement qu'une étape précédente doit encore être terminée, comme la validation d'un créneau ou d'un devis.
   </Step>
 
-  <Step title="Terminer l’intervention">
-    Lorsque les travaux sont terminés, utilisez l’action de fin si elle est disponible dans l’interface.
+  <Step title="Réaliser l'intervention">
+    Réalisez l'intervention selon les informations disponibles.
 
-    Si une nouvelle visite est nécessaire, suivez l’action proposée par l’application plutôt que de marquer l’intervention comme terminée.
+    Gardez en tête les éléments importants : diagnostic réalisé, action effectuée, pièce remplacée, information à transmettre au gestionnaire ou suite à prévoir.
+  </Step>
+
+  <Step title="Terminer ou terminer la session">
+    Lorsque l'intervention est terminée, utilisez l'action de fin si elle est disponible.
+
+    Si vous avez terminé une visite mais qu'une suite est nécessaire, utilisez l'action prévue par l'application, par exemple "Terminer la session" si elle est proposée.
+
+    Ne marquez pas une intervention comme terminée si une nouvelle visite, un devis complémentaire ou une validation est encore nécessaire.
   </Step>
 </Steps>
 
 ## Résultat attendu
 
-L’intervention avance dans la phase d’exécution.
+L'intervention avance dans la phase d'exécution.
 
-Le gestionnaire et le locataire peuvent suivre l’avancement. Une fois les travaux finalisés et validés, l’intervention peut être clôturée.
+Le gestionnaire et le locataire peuvent suivre l'avancement. Une fois les travaux finalisés, la clôture dépend de l'agence ou du locataire selon le parcours prévu. Le prestataire ne valide pas seul la clôture finale.
 
-## Points d’attention
+## Points d'attention
 
 - Vérifiez toujours le créneau avant de vous déplacer.
-- Ne proposez un créneau que si vous pouvez l’honorer.
+- Ne proposez un créneau que si vous pouvez l'honorer.
 - Téléchargez le mandat si vous en avez besoin sur place.
-- Documentez les travaux de façon courte et factuelle.
-- Si les travaux ne peuvent pas être terminés en une fois, indiquez clairement la suite à prévoir.
-- Certaines actions peuvent apparaître ou disparaître selon le statut de l’intervention.
+- Utilisez les actions affichées selon le statut de l'intervention.
+- Si les travaux ne peuvent pas être terminés en une fois, indiquez clairement la suite à prévoir par le canal disponible.
+- Certaines actions peuvent apparaître ou disparaître selon le statut de l'intervention.
